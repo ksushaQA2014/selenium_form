@@ -1,3 +1,16 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+import time
+
+TEST_DATA = {
+        'single_input': 'My best message here!!',
+        'two_input_first': 333,
+        'two_input_second': 444
+    }
+
+driver = webdriver.Chrome()
+
 driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html")
 time.sleep(5)
 if driver.find_element_by_id("at-cv-lightbox-close").size != 0:
@@ -17,3 +30,5 @@ assert driver.find_element(By.CSS_SELECTOR, "#displayvalue").text == str(TEST_DA
 
 
 driver.quit()
+
+
